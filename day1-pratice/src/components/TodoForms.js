@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 
 const TodoForms = ({ addtodo }) => {
@@ -22,13 +23,18 @@ const TodoForms = ({ addtodo }) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <input
+      <TextField
+        label="Task"
+        variant="standard"
         type="text"
         name="task"
         value={todo.task}
         onChange={clickHandler}
       />
-      <button type="submit">Submit</button>
+
+      <Button variant="contained" color="secondary" type="submit">
+        Submit
+      </Button>
     </form>
   );
 };
