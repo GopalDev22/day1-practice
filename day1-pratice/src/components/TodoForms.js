@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const TodoForms = ({ addtodo }) => {
   const [todo, setTodo] = useState({
@@ -14,7 +15,7 @@ const TodoForms = ({ addtodo }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (todo.task.trim()) {
-      addtodo({ ...todo, id: Math.floor(Math.random() * 10) });
+      addtodo({ ...todo, id: uuidv4() });
 
       //reset task
       setTodo({ ...todo, task: "" });
